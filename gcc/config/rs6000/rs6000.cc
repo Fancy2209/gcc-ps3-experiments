@@ -1787,6 +1787,17 @@ static const scoped_attribute_specs *const rs6000_attribute_table[] =
 
 
 
+static bool rs6000_cell64lv2_valid_pointer_mode(scalar_int_mode);
+
+static bool
+rs6000_cell64lv2_valid_pointer_mode(scalar_int_mode mode)
+{
+  return (mode == SImode || (TARGET_64BIT && mode == DImode) || mode == ptr_mode || mode == Pmode);
+}
+
+#undef TARGET_VALID_POINTER_MODE
+#define TARGET_VALID_POINTER_MODE rs6000_cell64lv2_valid_pointer_mode
+
 /* Processor table.  */
 struct rs6000_ptt
 {
@@ -3521,7 +3532,7 @@ rs6000_linux64_override_options ()
     {
       if (TARGET_PROFILE_KERNEL)
 	{
-	  profile_kernel = 0;
+	  //profile_kernel = 0; Why???
 	  error (INVALID_32BIT, "profile-kernel");
 	}
       if (OPTION_SET_P (rs6000_current_cmodel))
