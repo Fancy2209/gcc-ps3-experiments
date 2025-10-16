@@ -5648,7 +5648,7 @@ esac
 # version to the per-target configury.
 case "$cpu_type" in
   aarch64 | alpha | arc | arm | avr | bfin | cris | csky | i386 | loongarch | m32c \
-  | m68k | microblaze | mips | nds32 | pa | riscv | rs6000 | score | sparc \
+  | m68k | microblaze | mips | nds32 | pa | riscv | rs6000 | score | sparc | spu \
   | visium | xstormy16 | xtensa | ft32)
     insn="nop"
     ;;

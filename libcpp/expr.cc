@@ -1232,7 +1232,7 @@ parse_defined (cpp_reader *pfile)
 	  && CPP_OPTION (pfile, warn_expansion_to_defined))
         cpp_pedwarning (pfile, CPP_W_EXPANSION_TO_DEFINED,
 		        "this use of %<defined%> may not be portable");
-      is_defined = _cpp_defined_macro_p (node);
+      is_defined = (_cpp_defined_macro_p (node) && !(node->flags & NODE_CONDITIONAL));
       if (!_cpp_maybe_notify_macro_use (pfile, node, token->src_loc))
 	/* It wasn't a macro after all.  */
 	is_defined = false;
