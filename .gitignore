@@ -75,6 +75,7 @@ stamp-*
 # ADDITIONS from GCCRS front-end
 libgrust/*/target/
 
+/build-ppu
 /build-spu
 /libgloss
 /newlib

@@ -204,6 +204,7 @@ sparc64*-*-*)
 sparc*-*-*)
 	cpu_type=sparc
 	tmake_file="${tmake_file} sparc/t-sparc"
+	;;
 spu*-*-*)
 	cpu_type=spu
 	;;
